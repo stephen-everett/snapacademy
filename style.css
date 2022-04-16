@@ -2,8 +2,9 @@
 .main-container
 {
   box-shadow: -10px 10px 100px 50px rgba(0, 0, 0, 0.2);
-  width:80%;
+  width:auto;
   margin-left:10%;
+  margin-right:10%;
   dispaly:flex;
   flex-direction: column;
 }
