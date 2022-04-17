@@ -95,15 +95,27 @@
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
-.main-container .about, .donate
+.main-container .about, .donate, .location
 {
   padding-top:1%;
   height:auto;
   width:100%;
+  border-bottom:1px solid black;
+}
+.main-container .location
+{
+  background-color:#fdf8e0;
 }
 .main-container .about
 {
     background-color:#fdf8e0;
+}
+.main-container .footer
+{
+  text-align:center;
+  width:100%;
+  height:auto;
+  color:inherit;
 }
 
 
@@ -119,7 +131,7 @@
   margin-left:5%;
   font-family: 'Roboto', sans-serif;
 }
-.mission-content, .donate-content
+.mission-content, .donate-content, .location-content
 {
 
   display:flex;
@@ -130,7 +142,8 @@
   padding-bottom:10px;
 }
 .mission-content .post,
-.donate-content .post
+.donate-content .post,
+.location-content .post
 {
   display:flex;
   flex-direction:column;
@@ -139,7 +152,7 @@
   margin:auto;
   padding:1%;
 }
-.mission-content .post div ,.donate-conent .post div
+.mission-content .post div ,.donate-conent .post div, .location-content .post div
 {
   height:100%;
   width:100%;
@@ -154,7 +167,7 @@
 
 
 
-#about-us, #donate
+#about-us, #donate, #location
 {
   font-family:sans-serif;
   font-weight: bolder;

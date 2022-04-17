@@ -12,11 +12,11 @@
 <body id = "body" style = "background-color:#04d0f1" >
   <div id = "main"class = "main-container">
     <div id = "nav"class = "nav">
-      <button style = "background-color:transparent;border:none" type="button" onclick="myFunction()"> <img src ="logo.png" height = "80" width = "80"></button>
+      <button id = "themebutton"style = "background-color:transparent;border:none" type="button" onclick="darkMode()"> <img src ="logo.png" height = "80" width = "80"><img src = "clickme.png"></button>
       <!---<div class = "logo"><img class="logo-img" src = "logo.png" alt = "logo"></div> --->
       <div><a href="#about-us"><img class = "nav-img" src = "about_apple.png" alt = "About Us"></a></div>
       <div><a href ="#donate"><img class = "nav-img" src = "donate_grape.png" alt = "Donate"></a></div>
-      <div><img class = "nav-img" src = "location_avocado.png" alt = "Where to Find us"></div>
+      <div><a href = "#location"><img class = "nav-img" src = "location_avocado.png" alt = "Where to Find us"></a></div>
       </div>
     <div id = "head" class = "head">
       <div class = "logo-large">
@@ -26,7 +26,7 @@
         <div class = "title">
           <img class = "title-img" src = "title_shiny.png" alt = "Pomona Community Fridge">
           </div>
-        <div id ="tagline" class ="tagline"> Mutual aid group in Pomona CA providing healthy meals to the community for free
+        <div id ="tagline" class ="tagline"> Unoffical website for the Pomona Community Fridge, a mutual aid group in Pomona CA providing healthy meals to the community for free
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
             </div>
           </div>
       </div>
-    <div class = "donate">
+    <div id = "donatebox"class = "donate">
       <div id = "donate">
         <img id = "donatelabel"class = "post-title"src = "donate.png" alt = "Donate Today">
         </div>
@@ -70,24 +70,79 @@
             <div><p class = "post-style"> We will take gently worn and freshly washed clothes! No dirty or ripped clothes please. And no underwear! Remember, if you wouldn't wear it, DONT DONATE IT!</p></div>
             </div>
           </div>
+      </div>
+      <div id = "locationbox"class = "location">
+        <div id = "location">
+          <img id = "locationlabel"class = "post-title"src = "location.png" alt = "Where to find us">
           </div>
+          <div class = "location-content">
+            <div class = "post">
+              <div><img class = "post-img"src = "holt_flyer.png" alt = "Find us at 922 E Holt Ave"></div>
+              <div><p class = "post-style"> Find us at 922 E Holt Ave sunday April 10th from 10 am to 1 pm </p></div>
+              </div>
+            <div class = "post">
+              <div><a href = "https://www.google.com/maps/place/922+E+Holt+Ave,+Pomona,+CA+91767/@34.0624623,-117.7325694,19z/data=!4m5!3m4!1s0x80c33206656fd921:0x67ca0dbd889115a5!8m2!3d34.062619!4d-117.7323548"><img class = "post-img" src = "map_pin.png" alt = "google map pin"></a></div>
+              <div><p class = "post-style"> Click here get directions!</p></div>
+              </div>
+            <div class = "post">
+              <div><img class = "post-img" src = "cafe_flyer.png" alt = "Cafe Con Libros"></div>
+              <div><p class = "post-style"> Find us at Cafe Con Libros! Take what you need, leave what you don't :)</p></div>
+              </div>
+            </div>
+        </div>
+        <div class = "footer">
+          <p> This page is an unoffical website made by Stephen Everett for the Snap Academy Project Assessment. Any information shown should be considered unoffical and unaffiliated with the Pomona Community Fridge. Pomona Community Fridge has not endorsed any statements that may appear on this website. </p>
+        </div>
     </div>
   <script>
-function myFunction() {
-  document.getElementById("nav").style.backgroundColor = "#1e1e1e";
-  document.getElementById("main").style.backgroundColor = "#1c1c1c";
-  document.getElementById("main").style.color = "#d8d8d8";
-  document.getElementById("head").style.backgroundColor = "#1c1c1c";
-  document.getElementById("about").style.backgroundColor = "#1c1c1c";
-  document.getElementById("main").style.border = "15px solid #111111";
-  document.getElementById("about").style.borderBottom = "15px solid #111111";
-  document.getElementById("head").style.borderBottom = "15px solid #111111"
-  document.getElementById("tagline").style.color = "#d8d8d8";
-  document.getElementById("missionlabel").src="mission_dark.png";
-  document.getElementById("missionlabel").style.borderBottom = "2px solid #d8d8d8";
-  document.getElementById("donatelabel").src="donate_dark.png";
-  document.getElementById("donatelabel").style.borderBottom = "2px solid #d8d8d8";
-  document.body.style.backgroundColor = "#292929";
+function darkMode() {
+  var defaultColor = "rgb(4, 208, 241)";
+  var currentColor = document.body.style.backgroundColor;
+  if (defaultColor === currentColor)
+  {
+    document.getElementById("nav").style.backgroundColor = "#1e1e1e";
+    document.getElementById("main").style.backgroundColor = "#1c1c1c";
+    document.getElementById("main").style.color = "#d8d8d8";
+    document.getElementById("main").style.border = "7px solid #111111";
+    document.getElementById("head").style.backgroundColor = "#1c1c1c";
+    document.getElementById("about").style.backgroundColor = "#1c1c1c";
+    document.getElementById("about").style.borderBottom = "15px solid #111111";
+    document.getElementById("head").style.borderBottom = "15px solid #111111"
+    document.getElementById("donatebox").style.borderBottom = "15px solid #111111";
+    document.getElementById("donatebox").style.backgroundColor = "#1c1c1c";
+    document.getElementById("tagline").style.color = "#d8d8d8";
+    document.getElementById("missionlabel").src="mission_dark.png";
+    document.getElementById("missionlabel").style.borderBottom = "2px solid #d8d8d8";
+    document.getElementById("donatelabel").src="donate_dark.png";
+    document.getElementById("donatelabel").style.borderBottom = "2px solid #d8d8d8";
+    document.getElementById("locationlabel").src="location_dark.png";
+    document.getElementById("locationlabel").style.borderBottom = "2px solid #d8d8d8";
+    document.getElementById("locationbox").style.backgroundColor = "#1c1c1c";
+    document.body.style.backgroundColor = "#292929";
+  }
+  else
+  {
+    document.getElementById("nav").style.backgroundColor = "#8ba4f7";
+    document.getElementById("main").style.backgroundColor = "#04d0f1";
+    document.getElementById("main").style.color = "#000000";
+    document.getElementById("main").style.border = "1px solid #111111";
+    document.getElementById("head").style.backgroundColor = "#8ba4f7";
+    document.getElementById("about").style.backgroundColor = "#fdf8e0";
+    document.getElementById("about").style.borderBottom = "1px solid #111111";
+    document.getElementById("head").style.borderBottom = "1px solid #111111";
+    document.getElementById("donatebox").style.borderBottom = "1px solid #111111";
+    document.getElementById("donatebox").style.backgroundColor = "#EAEAEA";
+    document.getElementById("locationbox").style.backgroundColor = "#fdf8e0";
+    document.getElementById("tagline").style.color = "#000000";
+    document.getElementById("missionlabel").src="mission.png";
+    document.getElementById("missionlabel").style.borderBottom = "2px solid #000000";
+    document.getElementById("donatelabel").src="donate.png";
+    document.getElementById("donatelabel").style.borderBottom = "2px solid #000000";
+    document.getElementById("locationlabel").src="location.png";
+    document.getElementById("locationlabel").style.borderBottom = "2px solid #000000";
+    document.body.style.backgroundColor = "#04d0f1";
+  }
+
 }
 </script>
 </body>
