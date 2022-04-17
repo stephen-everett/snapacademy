@@ -27,6 +27,10 @@
   width:auto;
   margin:auto;
 }
+.main-container .nav div:hover
+{
+  transform:scale(1.1);
+}
 .main-container .nav .logo
 {
 
@@ -147,10 +151,11 @@
 {
   display:flex;
   flex-direction:column;
-  height:100%;
-  width:auto;
+  height:150%;
+  width:100%;
   margin:auto;
   padding:1%;
+  transition:transform .1s;
 }
 .mission-content .post div ,.donate-conent .post div, .location-content .post div
 {
@@ -163,6 +168,16 @@
   border:1px solid black;
   width:100%;
   height:100%;
+}
+.mission-content .post:hover,
+.donate-content .post:hover,
+.location-content .post:hover
+{
+  border:1px solid black;
+  background-color:white;
+  color:black;
+  box-shadow: 0px 10px 5px 5px rgba(0, 0, 0, 0.4);
+  transform: scale(1.2);
 }
 
 
