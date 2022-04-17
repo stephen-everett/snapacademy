@@ -9,15 +9,16 @@
   <meta charset = "utf-8">
   <title>Snap Academy Web Page </title>
 </head>
-<body style = "background-color:#04d0f1">
-  <div class = "main-container">
-    <div class = "nav">
-      <div class = "logo"><img class="logo-img" src = "logo.png" alt = "logo"></div>
+<body id = "body" style = "background-color:#04d0f1" >
+  <div id = "main"class = "main-container">
+    <div id = "nav"class = "nav">
+      <button style = "background-color:transparent;border:none" type="button" onclick="myFunction()"> <img src ="logo.png" height = "80" width = "80"></button>
+      <!---<div class = "logo"><img class="logo-img" src = "logo.png" alt = "logo"></div> --->
       <div><a href="#about-us"><img class = "nav-img" src = "about_apple.png" alt = "About Us"></a></div>
       <div><a href ="#donate"><img class = "nav-img" src = "donate_grape.png" alt = "Donate"></a></div>
       <div><img class = "nav-img" src = "location_avocado.png" alt = "Where to Find us"></div>
       </div>
-    <div class = "head">
+    <div id = "head" class = "head">
       <div class = "logo-large">
           <img class = "img-logo-large" src = "fridge2.png" alt = "Feed The Community">
         </div>
@@ -25,13 +26,13 @@
         <div class = "title">
           <img class = "title-img" src = "title_shiny.png" alt = "Pomona Community Fridge">
           </div>
-        <div class ="tagline"> Mutual aid group in Pomona CA providing healthy meals to the community for free
+        <div id ="tagline" class ="tagline"> Mutual aid group in Pomona CA providing healthy meals to the community for free
           </div>
         </div>
       </div>
-    <div class = "about">
+    <div id = "about"class = "about">
       <div id = "about-us">
-        <img class = "post-title"src = "mission.png" alt = "Our Mission">
+        <img id = "missionlabel"class = "post-title"src = "mission.png" alt = "Our Mission">
         </div>
         <p class = "post-style">We are a collective of people with a mission to reduce hunger in our community. Our goal is provide fresh produce, pantry staples, and grab and go meals for FREE. Our fridges will re-distribute food and supplies to those in need, rather than let it go to waste.
           To get involved, host a fridge, or learn more, please contact us
@@ -53,7 +54,7 @@
       </div>
     <div class = "donate">
       <div id = "donate">
-        <img class = "post-title"src = "donate.png" alt = "Donate Today">
+        <img id = "donatelabel"class = "post-title"src = "donate.png" alt = "Donate Today">
         </div>
         <div class = "donate-content">
           <div class = "post">
@@ -65,11 +66,29 @@
             <div><p class = "post-style"> We also accept monetary donations! Just venmo us @communityfridgepomona</p></div>
             </div>
           <div class = "post">
-            <div><img class = "post-img" src = "donate_guide.png"></div>
+            <div><img class = "post-img" src = "donate_guide.png" alt = "Donation Guide"></div>
             <div><p class = "post-style"> We will take gently worn and freshly washed clothes! No dirty or ripped clothes please. And no underwear! Remember, if you wouldn't wear it, DONT DONATE IT!</p></div>
             </div>
           </div>
           </div>
     </div>
+  <script>
+function myFunction() {
+  document.getElementById("nav").style.backgroundColor = "#1e1e1e";
+  document.getElementById("main").style.backgroundColor = "#1c1c1c";
+  document.getElementById("main").style.color = "#d8d8d8";
+  document.getElementById("head").style.backgroundColor = "#1c1c1c";
+  document.getElementById("about").style.backgroundColor = "#1c1c1c";
+  document.getElementById("main").style.border = "15px solid #111111";
+  document.getElementById("about").style.borderBottom = "15px solid #111111";
+  document.getElementById("head").style.borderBottom = "15px solid #111111"
+  document.getElementById("tagline").style.color = "#d8d8d8";
+  document.getElementById("missionlabel").src="mission_dark.png";
+  document.getElementById("missionlabel").style.borderBottom = "2px solid #d8d8d8";
+  document.getElementById("donatelabel").src="donate_dark.png";
+  document.getElementById("donatelabel").style.borderBottom = "2px solid #d8d8d8";
+  document.body.style.backgroundColor = "#292929";
+}
+</script>
 </body>
 </html>
