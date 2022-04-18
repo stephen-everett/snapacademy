@@ -12,8 +12,7 @@
 <body id = "body" style = "background-color:#04d0f1" >
   <div id = "main"class = "main-container">
     <div id = "nav"class = "nav">
-      <button id = "themebutton"style = "background-color:transparent;border:none" type="button" onclick="darkMode()"> <img src ="logo.png" height = "80" width = "80"><img src = "clickme.png"></button>
-      <!---<div class = "logo"><img class="logo-img" src = "logo.png" alt = "logo"></div> --->
+      <button id = "themebutton" style = "background-color:transparent;border:none" type="button" onclick="darkMode()"> <img src ="logo.png" height = "80" width = "80"><img src = "clickme.png"></button>
       <div><a href="#about-us"><img class = "nav-img" src = "about_apple.png" alt = "About Us"></a></div>
       <div><a href ="#donate"><img class = "nav-img" src = "donate_grape.png" alt = "Donate"></a></div>
       <div><a href = "#location"><img class = "nav-img" src = "location_avocado.png" alt = "Where to Find us"></a></div>
@@ -35,8 +34,30 @@
         <img id = "missionlabel"class = "post-title"src = "mission.png" alt = "Our Mission">
         </div>
         <p class = "post-style">We are a collective of people with a mission to reduce hunger in our community. Our goal is provide fresh produce, pantry staples, and grab and go meals for FREE. Our fridges will re-distribute food and supplies to those in need, rather than let it go to waste.
-          To get involved, host a fridge, or learn more, please contact us
+          To get involved, host a fridge, or learn more, please <button id = "contact-button" class = "contact-button" type = "button" onclick = "openForm()"> contact us </button>
         </p>
+        <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+          <h1>Contact Us</h1>
+
+          <label for="email"><b>Email</b></label>
+          <input onfocus = "this.value = ''"id = "input-email" type="text" placeholder="Enter Email" name="email" required>
+
+          <label for="name"><b>Name</b></label>
+          <input onfocus = "this.value = ''" id = "input-name" type="text" placeholder="Enter your name" name="name" required>
+
+          <textarea onfocus = "this.value = ''" id = "message" placeholder = "Let us hear from you"></textarea>
+
+        </form>
+
+        <div class = "form-button-container">
+          <div><button type="submit" class="btn" onclick = "send()">Send</button></div>
+          <div><button type="button" class="btn cancel" onclick="closeForm()">Cancel</button></div>
+        </div>
+      </div>
+      <div id = "send"class = "sent">
+        <p class = "message"> sent! </p>
+      </div>
         <div class = "mission-content">
           <div class = "post">
             <div><img class = "post-img"src = "grilled.png"   alt = "yummy grilled cheese"></div>
@@ -94,57 +115,82 @@
           <p> This page is an unoffical website made by Stephen Everett for the Snap Academy Project Assessment. Any information shown should be considered unoffical and unaffiliated with the Pomona Community Fridge. Pomona Community Fridge has not endorsed any statements that may appear on this website. </p>
         </div>
     </div>
-  <script>
+<script>
 
-function darkMode() {
-  var defaultColor = "rgb(4, 208, 241)";
-  var currentColor = document.body.style.backgroundColor;
-  if (defaultColor === currentColor)
+  function darkMode()
   {
-    document.getElementById("nav").style.backgroundColor = "#1e1e1e";
-    document.getElementById("main").style.backgroundColor = "#1c1c1c";
-    document.getElementById("main").style.color = "#d8d8d8";
-    document.getElementById("main").style.border = "7px solid #111111";
-    document.getElementById("head").style.backgroundColor = "#1c1c1c";
-    document.getElementById("about").style.backgroundColor = "#1c1c1c";
-    document.getElementById("about").style.borderBottom = "15px solid #111111";
-    document.getElementById("head").style.borderBottom = "15px solid #111111"
-    document.getElementById("donatebox").style.borderBottom = "15px solid #111111";
-    document.getElementById("donatebox").style.backgroundColor = "#1c1c1c";
-    document.getElementById("tagline").style.color = "#d8d8d8";
-    document.getElementById("missionlabel").src="mission_dark.png";
-    document.getElementById("missionlabel").style.borderBottom = "2px solid #d8d8d8";
-    document.getElementById("donatelabel").src="donate_dark.png";
-    document.getElementById("donatelabel").style.borderBottom = "2px solid #d8d8d8";
-    document.getElementById("locationlabel").src="location_dark.png";
-    document.getElementById("locationlabel").style.borderBottom = "2px solid #d8d8d8";
-    document.getElementById("locationbox").style.backgroundColor = "#1c1c1c";
-    document.body.style.backgroundColor = "#292929";
-  }
-  else
-  {
-    document.getElementById("nav").style.backgroundColor = "#8ba4f7";
-    document.getElementById("main").style.backgroundColor = "#04d0f1";
-    document.getElementById("main").style.color = "#000000";
-    document.getElementById("main").style.border = "1px solid #111111";
-    document.getElementById("head").style.backgroundColor = "#8ba4f7";
-    document.getElementById("about").style.backgroundColor = "#fdf8e0";
-    document.getElementById("about").style.borderBottom = "1px solid #111111";
-    document.getElementById("head").style.borderBottom = "1px solid #111111";
-    document.getElementById("donatebox").style.borderBottom = "1px solid #111111";
-    document.getElementById("donatebox").style.backgroundColor = "#EAEAEA";
-    document.getElementById("locationbox").style.backgroundColor = "#fdf8e0";
-    document.getElementById("tagline").style.color = "#000000";
-    document.getElementById("missionlabel").src="mission.png";
-    document.getElementById("missionlabel").style.borderBottom = "2px solid #000000";
-    document.getElementById("donatelabel").src="donate.png";
-    document.getElementById("donatelabel").style.borderBottom = "2px solid #000000";
-    document.getElementById("locationlabel").src="location.png";
-    document.getElementById("locationlabel").style.borderBottom = "2px solid #000000";
-    document.body.style.backgroundColor = "#04d0f1";
-  }
+    var defaultColor = "rgb(4, 208, 241)";
+    var currentColor = document.body.style.backgroundColor;
+    if (defaultColor === currentColor)
+    {
+      document.getElementById("nav").style.backgroundColor = "#1e1e1e";
+      document.getElementById("main").style.backgroundColor = "#1c1c1c";
+      document.getElementById("main").style.color = "#d8d8d8";
+      document.getElementById("main").style.border = "7px solid #111111";
+      document.getElementById("head").style.backgroundColor = "#1c1c1c";
+      document.getElementById("about").style.backgroundColor = "#1c1c1c";
+      document.getElementById("about").style.borderBottom = "15px solid #111111";
+      document.getElementById("head").style.borderBottom = "15px solid #111111"
+      document.getElementById("donatebox").style.borderBottom = "15px solid #111111";
+      document.getElementById("donatebox").style.backgroundColor = "#1c1c1c";
+      document.getElementById("tagline").style.color = "#d8d8d8";
+      document.getElementById("missionlabel").src="mission_dark.png";
+      document.getElementById("missionlabel").style.borderBottom = "2px solid #d8d8d8";
+      document.getElementById("donatelabel").src="donate_dark.png";
+      document.getElementById("donatelabel").style.borderBottom = "2px solid #d8d8d8";
+      document.getElementById("locationlabel").src="location_dark.png";
+      document.getElementById("locationlabel").style.borderBottom = "2px solid #d8d8d8";
+      document.getElementById("locationbox").style.backgroundColor = "#1c1c1c";
+      document.body.style.backgroundColor = "#292929";
+    }
+    else
+    {
+      document.getElementById("nav").style.backgroundColor = "#8ba4f7";
+      document.getElementById("main").style.backgroundColor = "#04d0f1";
+      document.getElementById("main").style.color = "#000000";
+      document.getElementById("main").style.border = "1px solid #111111";
+      document.getElementById("head").style.backgroundColor = "#8ba4f7";
+      document.getElementById("about").style.backgroundColor = "#fdf8e0";
+      document.getElementById("about").style.borderBottom = "1px solid #111111";
+      document.getElementById("head").style.borderBottom = "1px solid #111111";
+      document.getElementById("donatebox").style.borderBottom = "1px solid #111111";
+      document.getElementById("donatebox").style.backgroundColor = "#EAEAEA";
+      document.getElementById("locationbox").style.backgroundColor = "#fdf8e0";
+      document.getElementById("tagline").style.color = "#000000";
+      document.getElementById("missionlabel").src="mission.png";
+      document.getElementById("missionlabel").style.borderBottom = "2px solid #000000";
+      document.getElementById("donatelabel").src="donate.png";
+      document.getElementById("donatelabel").style.borderBottom = "2px solid #000000";
+      document.getElementById("locationlabel").src="location.png";
+      document.getElementById("locationlabel").style.borderBottom = "2px solid #000000";
+      document.body.style.backgroundColor = "#04d0f1";
+    }
 
-}
+  }
+  function openForm()
+  {
+    document.getElementById("myForm").style.display = "flex";
+  }
+  function closeWindow()
+  {
+    document.getElementById("send").style.display = "none";
+    document.getElementById("myForm").style.display = "none";
+  }
+  function send()
+  {
+    document.getElementById("input-email").value = "Enter Email";
+    document.getElementById("input-name").value = "Enter your name";
+    document.getElementById("message").value = "Let us hear from you";
+    document.getElementById("send").style.display = "block";
+    var timeoutID = setTimeout(closeWindow,750);
+  }
+  function closeForm()
+  {
+    document.getElementById("input-email").value = "Enter Email";
+    document.getElementById("input-name").value = "Enter your name";
+    document.getElementById("message").value = "Let us hear from you";
+    document.getElementById("myForm").style.display = "none";
+  }
 </script>
 </body>
 </html>
